@@ -1,0 +1,55 @@
+.header {
+    background-color: blue;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .recordButton, .stopButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .recordButton {
+    background-color: green;
+    color: white;
+  }
+  
+  .stopButton {
+    background-color: red;
+    color: white;
+  }
+  
+  .timer {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .audio-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .audio-item {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .audio-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .reference-section {
+    margin-top: 20px;
+  }
