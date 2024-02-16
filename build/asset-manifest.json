@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/PronunciationReact/static/css/main.41f2b54a.css",
-    "main.js": "/PronunciationReact/static/js/main.bb16d465.js",
-    "static/js/592.91499531.chunk.js": "/PronunciationReact/static/js/592.91499531.chunk.js",
-    "index.html": "/PronunciationReact/index.html",
-    "main.41f2b54a.css.map": "/PronunciationReact/static/css/main.41f2b54a.css.map",
-    "main.bb16d465.js.map": "/PronunciationReact/static/js/main.bb16d465.js.map",
-    "592.91499531.chunk.js.map": "/PronunciationReact/static/js/592.91499531.chunk.js.map"
+    "main.css": "/static/css/main.41f2b54a.css",
+    "main.js": "/static/js/main.b120a077.js",
+    "static/js/592.91499531.chunk.js": "/static/js/592.91499531.chunk.js",
+    "index.html": "/index.html",
+    "main.41f2b54a.css.map": "/static/css/main.41f2b54a.css.map",
+    "main.b120a077.js.map": "/static/js/main.b120a077.js.map",
+    "592.91499531.chunk.js.map": "/static/js/592.91499531.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.41f2b54a.css",
-    "static/js/main.bb16d465.js"
+    "static/js/main.b120a077.js"
   ]
 }
