@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './AudioRecorder.css';
 
 const AudioRecorder = () => {
@@ -6,18 +6,18 @@ const AudioRecorder = () => {
   const [recordedChunks, setRecordedChunks] = useState([]);
   const [timer, setTimer] = useState(0);
   const [isRecording, setIsRecording] = useState(false);
-  const [referenceWord, setReferenceWord] = useState('');
-  const [referenceAudioUrl, setReferenceAudioUrl] = useState('');
-  let timerInterval = null;
+  const timerIntervalRef = useRef(null);
+  const referenceWord = "ExampleWord";
+  const referenceAudioUrl = "https://example.com/audio.mp3";
 
   useEffect(() => {
     if (isRecording) {
-      timerInterval = setInterval(() => {
+      timerIntervalRef.current = setInterval(() => {
         setTimer(prev => prev + 1);
       }, 1000);
     }
 
-    return () => clearInterval(timerInterval);
+    return () => clearInterval(timerIntervalRef.current);
   }, [isRecording]);
 
   const startRecording = async () => {
