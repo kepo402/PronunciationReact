@@ -67,6 +67,11 @@ const AudioRecorder = () => {
     });
   };
 
+  const playReferenceAudio = () => {
+    const audio = new Audio(referenceAudioUrl);
+    audio.play();
+  };
+
   return (
     <div>
       <div className="header">
@@ -78,7 +83,9 @@ const AudioRecorder = () => {
       <div>{renderAudioList()}</div>
       <div>
         <h2>Reference Word: {referenceWord}</h2>
-        <audio controls src={referenceAudioUrl}></audio>
+        <button onClick={playReferenceAudio}>
+          <img src="speaker_icon.png" alt="Speaker Icon" />
+        </button>
       </div>
     </div>
   );
