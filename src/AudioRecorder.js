@@ -7,8 +7,8 @@ const AudioRecorder = () => {
   const [timer, setTimer] = useState(0);
   const [isRecording, setIsRecording] = useState(false);
   const timerIntervalRef = useRef(null);
-  const referenceWord = "ExampleWord";
-  const referenceAudioUrl = "https://example.com/audio.mp3";
+  const referenceWord = "Hello, shey àtí bẹ̀rẹ̀ ni?";
+  const referenceAudioUrl = "/Recording.mp3";
 
   useEffect(() => {
     if (isRecording) {
@@ -57,7 +57,7 @@ const AudioRecorder = () => {
 
   const renderAudioList = () => {
     return recordedChunks.map((chunk, index) => {
-      const audioUrl = URL.createObjectURL(new Blob([chunk], { type: 'audio/webm' }));
+      const audioUrl = URL.createObjectURL(new Blob([chunk], { type: 'audio/mp3' }));
       return (
         <div key={index} className="audio-item">
           <audio controls src={audioUrl}></audio>
@@ -68,7 +68,7 @@ const AudioRecorder = () => {
   };
 
   const playReferenceAudio = () => {
-    const audio = new Audio(referenceAudioUrl);
+    const audio = new Audio(process.env.PUBLIC_URL + referenceAudioUrl);
     audio.play();
   };
 
@@ -84,7 +84,7 @@ const AudioRecorder = () => {
       <div>
         <h2>Reference Word: {referenceWord}</h2>
         <button onClick={playReferenceAudio}>
-          <img src="speaker_icon.png" alt="Speaker Icon" />
+          <img src="speaker_icon.png" alt="Play" />
         </button>
       </div>
     </div>
