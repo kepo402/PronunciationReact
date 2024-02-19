@@ -9,7 +9,7 @@ const AudioRecorder = () => {
   const [isRecording, setIsRecording] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false); // New state for tracking if audio is playing
   const timerIntervalRef = useRef(null);
-  const referenceWord = "ExampleWord";
+  const referenceWord = "Hello, shey àtí bẹ̀rẹ̀ ni?";
   const referenceAudioUrl = "/Recording.mp3";
 
   useEffect(() => {
