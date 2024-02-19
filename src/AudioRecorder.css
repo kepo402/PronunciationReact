@@ -35,3 +35,19 @@ button:disabled {
 .audio-item button {
   margin-left: 10px;
 }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulsating {
+  animation: pulse 1s infinite;
+}

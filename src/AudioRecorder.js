@@ -1,13 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './AudioRecorder.css';
+import speakerIcon from './images/speaker_icon.jpg';
 
 const AudioRecorder = () => {
   const [mediaRecorder, setMediaRecorder] = useState(null);
   const [recordedChunks, setRecordedChunks] = useState([]);
   const [timer, setTimer] = useState(0);
   const [isRecording, setIsRecording] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false); // New state for tracking if audio is playing
   const timerIntervalRef = useRef(null);
-  const referenceWord = "Hello, shey àtí bẹ̀rẹ̀ ni?";
+  const referenceWord = "ExampleWord";
   const referenceAudioUrl = "/Recording.mp3";
 
   useEffect(() => {
@@ -69,6 +71,8 @@ const AudioRecorder = () => {
 
   const playReferenceAudio = () => {
     const audio = new Audio(process.env.PUBLIC_URL + referenceAudioUrl);
+    audio.onplay = () => setIsPlaying(true); // Set isPlaying state to true when audio starts playing
+    audio.onended = () => setIsPlaying(false); // Set isPlaying state to false when audio finishes playing
     audio.play();
   };
 
@@ -83,8 +87,8 @@ const AudioRecorder = () => {
       <div>{renderAudioList()}</div>
       <div>
         <h2>Reference Word: {referenceWord}</h2>
-        <button onClick={playReferenceAudio}>
-          <img src="speaker_icon.png" alt="Play" />
+        <button onClick={playReferenceAudio} className={isPlaying ? 'pulsating' : ''}>
+          <img src={speakerIcon} alt="Speaker Icon" /> Play
         </button>
       </div>
     </div>
