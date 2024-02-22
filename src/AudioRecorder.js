@@ -59,7 +59,7 @@ const AudioRecorder = () => {
 
   const renderAudioList = () => {
     return recordedChunks.map((chunk, index) => {
-      const audioUrl = URL.createObjectURL(new Blob([chunk], { type: 'audio/aac' }));
+      const audioUrl = URL.createObjectURL(new Blob([chunk], { type: 'audio/mpeg' }));
       return (
         <div key={index} className="audio-item">
           <audio controls src={audioUrl}></audio>
